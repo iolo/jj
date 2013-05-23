@@ -1,3 +1,4 @@
+/* global jj */
 /**
  * "Controller" support.
  *
@@ -93,7 +94,7 @@
         if (viewId) {
             view = jj.v.getView(viewId);
             if (!view) {
-                throw Error('view not found: ' + viewId);
+                throw new Error('view not found: ' + viewId);
             }
         } else {
             throw new Error('no view id.');

@@ -1,3 +1,4 @@
+/* global jj */
 (jj.define('jj.nls', [ ], function (require, exports, module, global) {
     "use strict";
     //-------------------------------------------------------------
@@ -26,13 +27,13 @@
     /**
      *
      * @param {string} key
-     * @param {...*} var_args
+     * @param {*=} var_args
      * @return {string} formatted localized message
      */
-    function format(key) {
+    function format(key, var_args) {
         var args = Array.prototype.slice.call(arguments);
         args[0] = messages[key];
-        return jj.format.apply(this, args);
+        return jj.format.apply(null, args);
     }
 
     /**

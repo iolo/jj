@@ -1,3 +1,4 @@
+/* global jj */
 /**
  * "Model" support.
  *
@@ -57,7 +58,7 @@
             });
             this.toString = function () {
                 return 'jj-model#' + node.id + ':' + node.type + ':' + node.src;
-            }
+            };
         },
         /**
          *
@@ -107,7 +108,6 @@
 
             if (!self.node.src) {
                 throw new Error('bad or missing model src');
-                return;
             }
 
             jj.ajax({

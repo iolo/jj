@@ -1,5 +1,6 @@
+/* global jj */
 (jj.define('jj.util', [ ], function (require, exports, module, global) {
-    "use strict";
+    'use strict';
     //-------------------------------------------------------------
 
     function decodeQueryString(query) {
@@ -18,5 +19,6 @@
     //-------------------------------------------------------------
     jj.def(exports)
         .method('decodeQueryString', decodeQueryString)
-        .end()
+        .end();
 }));
+

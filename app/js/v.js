@@ -1,3 +1,4 @@
+/* global jj */
 /**
  * "View" support.
  *
@@ -78,7 +79,9 @@
                 console.log('create ejs template');
                 console.log(funcBody);
             }
+            /* jshint evil:true */
             this.func = new Function('jj', 'model', funcBody);
+            /* jshint evil:false */
         },
 
         merge: function(model) {
@@ -103,7 +106,7 @@
             this.template = null;
             this.toString = function () {
                 return 'jj-view#' + node.id + ':' + node.type + ':' + node.src;
-            }
+            };
         },
         /**
          *
@@ -147,7 +150,7 @@
                         return doMerge();
                     }
                 }
-                console.warn('bad or missing template: id=' + self.node.id + ',type=' + self.node.type + ',template=' + templateType);;
+                console.warn('bad or missing template: id=' + self.node.id + ',type=' + self.node.type + ',template=' + templateType);
                 return content;
             });
         }

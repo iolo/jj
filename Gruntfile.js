@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         expr: true, //W030
         globals: {
           $: true,
-          angular: true
+          jj: true
         }
       },
       files: ['app/js/**/*.js']

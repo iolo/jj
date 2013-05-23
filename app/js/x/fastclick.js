@@ -1,5 +1,6 @@
+/* global jj */
 (jj.define('jj.x.fastclick', [ ], function (require, exports, module, global) {
-    "use strict";
+    'use strict';
     //-------------------------------------------------------------
 
     var gdoc = global.document,
@@ -20,7 +21,7 @@
             evt.preventDefault();
             moved = false;
 
-            target = gdoc.elementFromPoint(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+            target = gdoc.elementFromPoint(evt.targetTouches[0].clientX, evt.targetTouches[0].clientY);
             if (target.nodeType === 3) {
                 target = target.parentNode;
             }

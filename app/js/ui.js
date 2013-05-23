@@ -1,5 +1,6 @@
+/* global jj */
 (jj.define('jj.ui', [ ], function (require, exports, module, global) {
-    //"use strict";
+    'use strict';
 
     //-------------------------------------------------------------
 
@@ -156,13 +157,14 @@
     }
 
     // TODO: cleanup!
-    function goto(evt) {
+    function jump(evt) {
         //ex. <button data-to="one" data-fx="back"> to goto page #one
         //ex. <button data-to="two" data-fx="back"> to goto page #three via alias "two"
         //ex. <button data-to=""> for hide modal
         //ex. <page id="one" data-to-two="three">
-        var to = this.getAttribute(ATTR_GOTO_TO),
-            fx = this.getAttribute(ATTR_GOTO_FX),
+        var node = event.target,
+            to = node.getAttribute(ATTR_GOTO_TO),
+            fx = node.getAttribute(ATTR_GOTO_FX),
             toPage;
 
         if (evt) {
@@ -214,7 +216,9 @@
             // wrap with iscroll
             jj.each(node.getElementsByClassName(CSS_SCROLL), function (scrollNode) {
                 if (!node.iscrolls) { node.iscrolls = {}; }
+                /* jshint newcap:false */
                 node.iscrolls[scrollNode.id] = new iScroll(scrollNode);
+                /* jshint newcap:true */
             });
         });
 
@@ -235,7 +239,7 @@
         jj.each(node.querySelectorAll(SELECTOR_GOTO), function (gotoNode) {
             if (gotoNode.jj_bound_flag) { return; }
             gotoNode.jj_bound_flag = true;
-            gotoNode.addEventListener((gotoNode.nodeName === 'FORM') ? 'submit' : 'click', goto, false);
+            gotoNode.addEventListener((gotoNode.nodeName === 'FORM') ? 'submit' : 'click', jump, false);
         });
 
         jj.fireEvent(this.node, EVENT_PAGE_CREATE);
@@ -299,7 +303,8 @@
     };
 
     function initPage(pageNode) {
-        return pages[pageNode.id] = new Page(pageNode);
+        var page = pages[pageNode.id] = new Page(pageNode);
+        return page;
     }
 
     function initPages(base) {

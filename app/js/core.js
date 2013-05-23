@@ -1,3 +1,5 @@
+/* jshint expr:true */
+/* global window */
 (function (global) {
     "use strict";
 
@@ -28,7 +30,7 @@
      *
      * @methodOf jj
      * @param {Object|Array|NodeList} target
-     * @param {function(Object,string|number)} callback
+     * @param {function} callback
      */
     function each(target, callback) {
         var k, len;
@@ -78,17 +80,19 @@
      *
      * @methodOf jj
      * @param {string} fmt
-     * @param {...*} var_args
+     * @param {*=} var_args
      * @return {string} formatted string
      */
-    function format(fmt) {
+    function format(fmt, var_args) {
         var i, argc, arg, str = String(fmt);
         if (arguments.length > 1) {
             if ((arguments.length === 2) && (typeof arguments[1] === 'object'))  {
                 arg = arguments[1];
                 // placeholder with name
                 for(i in arg) {
+                  if(arg.hasOwnProperty(i)) {
                     str = str.replace(new RegExp(FORMAT_PLACEHOLDER_PREFIX + i + FORMAT_PLACEHOLDER_SUFFIX, 'g'), arg[i]);
+                  }
                 }
             } else {
                 // placeholder with index
@@ -106,10 +110,10 @@
      * @methodOf jj
      * @param {Object} ctx
      * @param {function|string} func
-     * @param {...*} var_args
+     * @param {*=} var_args
      * @return {function}
      */
-    function bind(ctx, func) {
+    function bind(ctx, func, var_args) {
         var slice, args;
         ctx = ctx || global;
         if (typeof func === 'string') {
@@ -145,14 +149,14 @@
      * @methodOf jj
      * @param {Node} node
      * @param {string} subtype
-     * @param {string} type
-     * @param {boolean} bubbles
+     * @param {string=} type
+     * @param {boolean=} bubbles
      * @param {boolean} cancelable
      * @return {boolean}
      */
     function fireEvent(node, subtype, type, bubbles, cancelable) {
-        var evt = g_doc.createEvent(type||'Events');//CustomEvent');
-        evt.initEvent(subtype, !!bubbles, !!cancelable, false);
+        var evt = g_doc.createEvent(type||'Events');
+        evt.initEvent(subtype, !!bubbles, !!cancelable);
         return node.dispatchEvent(evt);
     }
 
@@ -200,7 +204,6 @@
             }
             xhr.send(opts.data);
         } catch (e) {
-            if (opts.error)
             if (typeof opts.error === 'function') { opts.error(xhr, e); }
         }
         return xhr;
@@ -292,10 +295,10 @@
     /**
      * merge all properties(and methods) with other objects.
      *
-     * @param {...*} var_args
+     * @param {...object} var_args
      * @return {JJDef}
      */
-    JJDef.prototype.mixin = function() {
+    JJDef.prototype.mixin = function(var_args) {
         var k, v, i, argc, arg;
         for (i = 0, argc = arguments.length; i < argc; i += 1) {
             arg = arguments[i];
@@ -408,9 +411,10 @@
      * @methodOf jj
      * @param {string} id fully-qualified module identifier.
      * @param {function=} callback callback function.
+     * @param {object=} context
      */
-    function require(id, callback) {
-        var self = this, module = modules[id];
+    function require(id, callback, context) {
+        var module = modules[id];
 
         if (module) {
             console.warn('module already loaded: ' + id);
@@ -421,7 +425,7 @@
 
         // wrap with local function
         function requireModule() {
-            return require.apply(self, arguments);
+            return require.apply(context, arguments);
         }
         requireModule.main = id;
         requireModule.paths = [];
@@ -433,13 +437,15 @@
             async: !!callback,
             success: function(xhr) {
                 // FIXME: security! script injection?
+                /* jshint evil:true */
                 var moduleFunc = new Function('require', 'exports', 'module', xhr.responseText);
+                /* jshint evil:false */
 
-                moduleFunc.call(self, requireModule, module._exports, module);
+                moduleFunc.call(context, requireModule, module._exports, module);
 
                 modules[id] = module;
-                if (_DEBUG) { console.info('module loaded: ' + id); }
-                callback && callback.call(self, module._export);
+                _DEBUG && console.info('module loaded: ' + id);
+                callback && callback.call(context, module._export);
             },
             error: function(xhr, e) {
                 throw new Error('failed to load module: ' + id);
@@ -452,8 +458,8 @@
     /**
      * TODO: ...
      */
-    function define(id, deps, moduleFunc) {
-        var self = this, module = modules[id];
+    function define(id, deps, moduleFunc, context) {
+        var module = modules[id];
 
         if (module) {
             console.warn('module already loaded: ' + id);
@@ -469,12 +475,12 @@
 
         // wrap with local function
         function requireModule() {
-            return require.apply(self, arguments);
+            return require.apply(null, arguments);
         }
         requireModule.main = id;
         requireModule.paths = [];
 
-        moduleFunc.call(self, requireModule, module._exports, module, global);
+        moduleFunc.call(context, requireModule, module._exports, module, global);
 
         modules[id] = module;
         if (_DEBUG) { console.info('module defined: ' + id); }

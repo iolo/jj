@@ -1,3 +1,4 @@
+/* global jj */
 (jj.define('jj.dom', [ ], function (require, exports, module, global) {
     "use strict";
     //-------------------------------------------------------------
@@ -29,7 +30,7 @@
 
     /**
      *
-     * @param {string} tagName
+     * @param {string} className
      * @return {Object.<NodeList>}
      */
     function byClass(className) {
@@ -44,7 +45,7 @@
      * @return {Object.<Node>}
      */
     function query(selector, base) {
-        return (base || g_doc).querySelector(selector)
+        return (base || g_doc).querySelector(selector);
     }
 
     /**

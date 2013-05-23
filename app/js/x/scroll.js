@@ -1,3 +1,4 @@
+/* jshint expr:true */
 /* global jj */
 (jj.define('jj.scroll', [ ], function (require, exports, module, global) {
     'use strict';
@@ -27,14 +28,14 @@
         if (containingPage) {
             containingPage.addEventListener('jjpagebeforeshow', function (evt) {
                 if (evt.target === parent) {
-                  _DEBUG && console.log('jjpagebeforeshow with scoll child');
+                    _DEBUG && console.log('jjpagebeforeshow with scoll child');
                     scroll.refresh();
                 }
             }, false);
             containingPage.addEventListener('jjpagebeforehide', function (evt) {
                 if (evt.target === parent) {
-                  _DEBUG && console.log('jjpagebeforehide with scoll child');
-                  // do something?
+                    _DEBUG && console.log('jjpagebeforehide with scoll child');
+                    // do something?
                 }
             }, false);
         }

@@ -1,0 +1,12 @@
+{
+    "common.back": "Back",
+    "common.home": "Home",
+    "common.close": "Close",
+    "common.ok": "OK",
+    "common.cancel": "Cancel",
+    "common.yes": "Yes",
+    "common.no": "No",
+    "hello": "Hello",
+    "world": "World!",
+    "greeting": "Hi, {{name}}"
+}

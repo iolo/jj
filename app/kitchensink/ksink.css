@@ -1,0 +1,202 @@
+body {
+    background: black;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+#intro {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c00), to(#900));
+    color: #fff;
+    z-index: 9999;
+    -webkit-animation-name: intro-fx;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: .5s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-transform-origin: left center;
+}
+
+@-webkit-keyframes intro-fx {
+    from {
+        -webkit-transform: rotateY(0);
+    }
+    to {
+        -webkit-transform: rotateY(-90deg);
+    }
+}
+
+#intro > * {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#intro > h1 {
+    margin-top: 20%;
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#intro > h3 {
+    margin-top: 40%;
+    font-size: 1.5em;
+}
+
+#intro > h5 {
+    position: absolute;
+    top: 100%;
+    margin-top: -5em;
+}
+
+article > .jj-vbox {
+    padding: 1em;
+}
+
+article > .jj-vbox > div:first-child {
+    text-align: center;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: #ccc;
+    margin-bottom: 1em;
+}
+
+.jj-fx-custom1 {
+    -webkit-backface-visibility: hidden;
+}
+
+.jj-fx-custom1.jj-fx-in {
+    -webkit-animation-name: jj-fx-in-custom1;
+}
+
+.jj-fx-custom1.jj-fx-out {
+    -webkit-animation-name: jj-fx-out-custom1;
+}
+
+@-webkit-keyframes jj-fx-in-custom1 {
+    from {
+        -webkit-transform: scale(0) rotate(720deg);
+    }
+    to {
+        -webkit-transform: scale(1) rotate(0deg);
+    }
+}
+@-webkit-keyframes jj-fx-out-custom1 {
+    from {
+        -webkit-transform: scale(1) rotate(0deg);
+    }
+    to {
+        -webkit-transform: scale(0) rotate(720deg);
+    }
+}
+
+.jj-fx-custom2 {
+    -webkit-backface-visibility: hidden;
+}
+
+.jj-fx-custom2.jj-fx-in {
+    -webkit-animation-name: jj-fx-in-custom2;
+}
+
+.jj-fx-custom2.jj-fx-out {
+    -webkit-animation-name: jj-fx-out-custom2;
+}
+
+@-webkit-keyframes jj-fx-in-custom2 {
+    from {
+        -webkit-transform: translate3d(-1000px, 0, -1000px);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+@-webkit-keyframes jj-fx-out-custom2 {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(1000px, 0, 1000px);
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 2em;
+}
+
+.jj-nls-en #enBtn {
+    display: none;
+}
+
+.jj-nls-ko #koBtn {
+    display: none;
+}
+
+/* debug */
+/*
+.jj-vbox, .jj-hbox {
+    outline: 1px solid #f00;
+}
+.jj-vbox > *, .jj-hbox > * {
+    outline: 1px solid #0f0;
+}
+*/
+
+/* XXX: tested on galaxytab7 */
+.jj-ui-android .jj-vbox > *,
+.jj-ui-android .jj-hbox > * {
+}
+
+
+.jj-placeholder {
+    outline: 1px dotted #c00;
+}
+
+table {
+    width: 100%;
+    border: 2px solid #c00;
+}
+
+tr {
+    line-height: 2em;
+}
+
+thead tr {
+    background: #999;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+
+tbody tr:nth-child(even) {
+    background: #eef;
+}
+
+pre {
+    padding: 1em;
+    font-family: monospace;
+    border: 1px solid #000;
+    background: #eee;
+}
+
+.jj-vbox > button {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#ccc), color-stop(.5, #eee))
+
+}

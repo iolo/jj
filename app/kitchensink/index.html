@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>jj - kitchensink</title>
+    <link rel="stylesheet" href="../css/reset.css" /><!--@@DEBUG-->
+    <link rel="stylesheet" href="../css/ui.css" /><!--@@DEBUG-->
+    <link rel="stylesheet" href="../css/fx.css" /><!--@@DEBUG-->
+    <!--link rel="stylesheet" href="../lib/jj/jj.min.css" /--><!--@@RELEASE-->
+    <link rel="stylesheet" href="../themes/ios/ios.css" />
+    <!--link rel="stylesheet" href="../css/320x480.css" media="(device-width:320px) and (device-height:480px)" /-->
+    <!--link rel="stylesheet" href="../css/480x800.css" media="(device-width:480px) and (device-height:800px)" /-->
+    <!--<link rel="stylesheet" href="../themes/puddingface/puddingface.css" />-->
+    <link rel="stylesheet" href="ksink.css" />
+</head>
+<body>
+
+<div id="intro__">
+    <h1>Javascript on Journey</h1>
+    <h3>KitchenSink</h3>
+    <h5>Powered by Appspresso</h5>
+</div>
+
+<div id="jj-viewport" class="jj-fx-2d">
+
+<section id="mainPage" class="jj-page">
+    <header>
+        <h1>Javascript on Journey</h1>
+        <button>About</button>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p><em>Javascript on Journey</em> is a pure javascript framework &amp; toolkit &amp; library for WebApp.</p>
+            </div>
+            <button data-to="fxPage"><span>Fx Demo</span></button>
+            <button data-to="modalPage"><span>Modal Demo</span></button>
+            <button data-to="mvcPage"><span>MVC Demo</span></button>
+            <button data-to="ejsPage"><span>MVC with EJS Demo</span></button>
+            <button data-to="formPage"><span>MVC with Form Demo</span></button>
+            <button data-to="nlsPage"><span>NLS Demo</span></button>
+            <button data-to="listviewPage"><span>ListView Demo</span></button>
+        </div>
+    </article>
+    <footer>
+        <p>this is footer</p>
+    </footer>
+</section>
+
+<section id="fxPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1>Fx Demo</h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>High Performance Page Transition Effects.</p>
+                <p>Please, no <em>data-fx</em> attributes on button elements.</p>
+            </div>
+            <button data-to="fxPage2" data-fx="slide"><span>Horizontal Slide(slide)</span></button>
+            <button data-to="fxPage2" data-fx="vslide"><span>Vertical Slide(vslide)</span></button>
+            <button data-to="fxPage2" data-fx="swap"><span>Swap(swap)</span></button>
+            <button data-to="fxPage2" data-fx="flip"><span>Horizontal Flip(flip)</span></button>
+            <button data-to="fxPage2" data-fx="vflip"><span>Vertical Flip(vflip)</span></button>
+            <button data-to="fxPage2" data-fx="zoom"><span>Zoom In/Out(zoom)</span></button>
+            <button data-to="fxPage2" data-fx="fade"><span>Fade In/Out(fade)</span></button>
+            <button data-to="fxPage2" data-fx="custom1"><span>Custom Fx #1</span></button>
+        </div>
+    </article>
+</section>
+
+<section id="fxPage2" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1>Fx Demo #2</h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Easy to Custom Page Transition Effects.</p>
+                <p>Please, no <em>data-fx</em> attributes on button elements.</p>
+            </div>
+            <button data-to="fxPage" data-fx="slide-back"><span>Horizontal Slide(slide-back)</span></button>
+            <button data-to="fxPage" data-fx="vslide-back"><span>Vertical Slide(vslide-back)</span></button>
+            <button data-to="fxPage" data-fx="swap-back"><span>Swap(swap-back)</span></button>
+            <button data-to="fxPage" data-fx="flip-back"><span>Horizontal Flip(flip-back)</span></button>
+            <button data-to="fxPage" data-fx="vflip-back"><span>Vertical Flip(vflip-back)</span></button>
+            <button data-to="fxPage" data-fx="zoom"><span>Zoom In/Out(zoom)</span></button>
+            <button data-to="fxPage" data-fx="fade"><span>Fade In/Out(fade)</span></button>
+            <button data-to="fxPage" data-fx="custom2"><span>Custom Fx #2</span></button>
+        </div>
+    </article>
+</section>
+
+<section id="modalPage" class="jj-page jj-nofooter jj-modal">
+    <header>
+        <h1>Modal Demo</h1>
+        <button data-to=""><span data-nls="common.close">Close</span></button>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>This is a Modal Page</p>
+                <p>Do you like it?</p>
+            </div>
+            <div class="jj-hbox">
+                <button id="modalPage_yesBtn" data-to=""><span data-nls="common.yes">Yes</span></button>
+                <button id="modalPage_noBtn" data-to=""><span data-nls="common.no">No</span></button>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section id="listviewPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>ListView Demo</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-listview">
+            <h5>group header #1</h5>
+            <ul>
+                <li>
+                    <span>item with more</span>
+                    <span class="jj-more"></span>
+                </li>
+                <li>
+                    <span>item with badge</span>
+                    <span class="jj-badge">badge</span>
+                </li>
+                <li>
+                    <span>item with badge</span>
+                    <span class="jj-badge">1</span>
+                </li>
+                <li>
+                    <span>item with badge</span>
+                    <span class="jj-badge">123</span>
+                </li>
+            </ul>
+            <h5>group header #2</h5>
+            <ul>
+                <li>
+                    <label for="check1_check">item with check</label>
+                    <span class="jj-check"><input id="check1_check" type="checkbox" /></span>
+                </li>
+                <li>
+                    <label for="check2_check">item with check</label>
+                    <span class="jj-check"><input id="check2_check" type="checkbox" checked="checked" /></span>
+                </li>
+            </ul>
+            <h5>group header #3</h5>
+            <ul>
+                <li>
+                    <label for="switch1_check">item with switch</label>
+                    <span class="jj-switch"><input id="switch1_check" type="checkbox" /></span>
+                </li>
+                <li>
+                    <label for="switch2_check">item with switch</label>
+                    <span class="jj-switch"><input id="switch2_check" type="checkbox" checked="checked" /></span>
+                </li>
+            </ul>
+            <h5>group header #4</h5>
+            <ul>
+                <li>
+                    <label for="radio1_0">item with radio</label>
+                    <span class="jj-radio"><input id="radio1_0" type="radio" name="radio1" /></span>
+                </li>
+                <li>
+                    <label for="radio1_1">item with radio</label>
+                    <span class="jj-radio"><input id="radio1_1" type="radio" name="radio1" checked="checked" /></span>
+                </li>
+                <li>
+                    <label for="radio1_2">item with radio</label>
+                    <span class="jj-radio"><input id="radio1_2" type="radio" name="radio1" /></span>
+                </li>
+                <li>
+                    <label for="radio1_3">item with radio</label>
+                    <span class="jj-radio"><input id="radio1_3" type="radio" name="radio1" /></span>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+
+<section id="mvcPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>MVC Demo</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Simple MVC without Javascript.</p>
+                <p>Easy to Customize View and Model Behaviour.</p>
+            </div>
+            <button data-to="mvcPage1"><span>Inline View</span></button>
+            <button data-to="mvcPage2"><span>Remote View</span></button>
+            <button data-to="mvcPage3"><span>Inline View + Inline Model</span></button>
+            <button data-to="mvcPage4"><span>Inline View + Remote Model</span></button>
+            <button data-to="mvcPage5"><span>Remote View + Inline Model</span></button>
+            <button data-to="mvcPage6"><span>Remote View + Remote Model</span></button>
+        </div>
+    </article>
+</section>
+
+<section id="mvcPage1" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Inline View</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-inline</em>.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-inline"></div>
+        </div>
+    </article>
+</section>
+
+<section id="mvcPage2" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Remote View</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <nav class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-remote</em>.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-remote"></div>
+        </nav>
+    </article>
+</section>
+
+<section id="mvcPage3" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Inline View + Inline Model</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-inline</em> and  <em>script#model-inline</em>.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-inline" data-model="model-inline"></div>
+        </div>
+    </article>
+</section>
+
+<section id="mvcPage4" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Inline View + Remote Model</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-inline</em> and <em>script#model-remote</em>.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-inline" data-model="model-remote"></div>
+        </div>
+    </article>
+</section>
+
+<section id="mvcPage5" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Remote View + Inline Model</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-remote</em> and  <em>script#model-inline</em>.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-remote" data-model="model-inline"></div>
+        </div>
+    </article>
+</section>
+
+<section id="mvcPage6" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Remote View + Remote Model</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-remote</em> and  <em>script#model-remote</em>.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-remote" data-model="model-remote"></div>
+        </div>
+    </article>
+</section>
+
+<script id="model-inline" type="application/x-jj-model">
+{
+    "greeting": "hello, this is inline model!"
+}
+</script>
+
+<script id="model-remote" type="application/x-jj-model" src="model.json"></script>
+
+<script id="view-inline" type="application/x-jj-view">
+    <h3 style="color:blue">Inline View</h3>
+    <h3 style="color:red">{{greeting}}</h3>
+    <p>&nbsp;</p>
+    <p>The quick brown fox jumps over the lazy dog.</p>
+    <p>A raposa rápida castanha ataca o cão preguiçoso.</p>
+    <p>A rápida raposa castanha salta em cima cão lento.</p>
+    <p>Franz jagt im total verwahrlosten Taxi quer durch Bayern. 1234567890</p>
+    <p>Agera vulpe maronie sare peste câinele cel leneş.</p>
+    <p>El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja</p>
+    <p>いろはにほへと / ちりぬるを / わかよたれそ / つねならむ / うゐのおくやま / けふこえて / あさきゆめみし / ゑひもせす</p>
+    <p>키스의 고유 조건은 입술끼리 만나야 하고 특별한 기술은 필요치 않다.</p>
+</script>
+
+<script id="view-remote" type="application/x-jj-view" src="view.html"></script>
+
+<section id="ejsPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>MVC with EJS</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Please, note <em>script#view-ejs</em> and  <em>script#model-ejs</em>.</p>
+            </div>
+
+            <button data-to="aboutEjsPage">What is EJS?</button>
+
+            <div class="jj-placeholder" data-view="view-ejs" data-model="model-ejs"></div>
+        </div>
+    </article>
+</section>
+
+<div id="aboutEjsPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span>back</span></button>
+        <h1>About EJS...</h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <p>Markup:</p>
+            <pre>
+&lt;script id="view1"
+    type="application/x-jj-view"
+    src="foo.html"
+    data-template="ejs"&gt;&lt;/script&gt;
+&lt;script id="model1"
+    type="application/x-jj-model"
+    src="bar.json"&gt;&lt;/script&gt;
+&lt;div id="placeholder"
+    data-view="view1"
+    data-model="model1"&gt;&lt;/div&gt;
+            </pre>
+
+            <p>Script:</p>
+            <pre>
+jj.c.updatePlaceholder(jj.$id('placeholder'));
+            </pre>
+        </div>
+    </article>
+</div>
+
+<script id="model-ejs" type="application/x-jj-model">
+{
+    "metadata": {
+        "key": "name",
+        "fields": [
+            [ "name", "string" ],
+            [ "class", "string" ],
+            [ "level", "number" ]
+        ]
+    },
+    "items": [
+        [ "dupre", "paladin", 97 ],
+        [ "geoffrey", "fighter", 92 ],
+        [ "iolo", "bard", 99 ],
+        [ "jaana", "druid", 96 ],
+        [ "julia", "tinker", 95 ],
+        [ "katrina", "shepherd", 94 ],
+        [ "mariah", "magician", 93 ],
+        [ "shamino", "fighter", 98 ]
+    ]
+}
+</script>
+
+<script id="view-ejs" type="application/x-jj-view" data-template="ejs">
+    {% var nfields = model.metadata.fields.length, nitems = model.items.length; %}
+    {% console.log(model, model.metadata.fields.constructor, model.items.constructor, nfields, nitems); %}
+    <h1>The Companions of the Avatar</h1>
+    <table>
+        <thead>
+            {% for(var i = 0; i < nfields; i += 1) { %}
+            <th>{{ metadata.fields[i][0] }}</th>
+            {% } %}
+        </thead>
+        <tbody>
+            {% for(var i = 0; i < nitems; i += 1) { %}
+            <tr>
+                {% for(var j = 0; j < nfields; j += 1) { %}
+                <td>{{ items[i][j] }}</td>
+                {% } %}
+            </tr>
+            {% } %}
+        </tbody>
+    </table>
+</script>
+
+<section id="formPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>Form Demo</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Page Navigation with Form Submit without JavaScript.</p>
+                <p>Please, note <em>data-model</em> and <em>data-to</em> attributes on the <em>FORM</em> element.</p>
+            </div>
+            <form id="form1" class="jj-vbox" data-to="formPage2" data-model="model-form">
+                <label for="firstNameText">First Name:</label>
+                <input id="firstNameText" name="firstName" type="text" />
+                <label for="lastNameText">Last Name:</label>
+                <input id="lastNameText" name="lastName" type="text" />
+                <label for="passwordText">Password:</label>
+                <input id="passwordText" name="password" type="password" />
+                <label for="passwordConfirmText">Password(Confirm):</label>
+                <input id="passwordConfirmText" name="passwordConfirm" type="password" />
+                <label for="descriptionText">Description:</label>
+                <textarea id="descriptionText" name="description" rows="5"></textarea>
+                <fieldset>
+                    <legend>Style:</legend>
+                    <input id="boldCheck" name="bold" type="checkbox" />
+                    <label for="boldCheck">Bold</label>
+                    <input id="italicCheck" name="italic" type="checkbox" />
+                    <label for="italicCheck">Italic</label>
+                    <input id="underlineCheck" name="underline" type="checkbox" />
+                    <label for="underlineCheck">Underline</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Color:</legend>
+                    <input id="redRadio" name="color" type="radio" value="red" />
+                    <label for="redRadio">Red</label>
+                    <input id="greenRadio" name="color" type="radio" value="green" />
+                    <label for="greenRadio">Green</label>
+                    <input id="blueRadio" name="color" type="radio" value="blue" />
+                    <label for="blueRadio">Blue</label>
+                </fieldset>
+                <label for="fontSelect">Font:</label>
+                <select id="fontSelect" name="font">
+                    <option value="sans-serif">Sans Serif</option>
+                    <option value="serif">Serif</option>
+                    <option value="monospace">Monospace</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="fantasy">Fantasy</option>
+                </select>
+                <label for="sizeText">Size:</label>
+                <input id="sizeText" name="size" type="number" />
+                <div class="jj-hbox">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </article>
+</section>
+
+<section id="formPage2" class="jj-page jj-nofooter jj-modal">
+    <header>
+        <button data-to=""><span data-nls="common.close">close</span></button>
+        <h1><span>Form Submit Result</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Form Submit as a page navigation without JavaScript.</p>
+            </div>
+            <div class="jj-placeholder" data-view="view-form" data-model="model-form"></div>
+        </div>
+    </article>
+</section>
+
+<script id="model-form" type="application/x-jj-model">
+{
+    "firstName": "--firstName--",
+    "lastName": "--lastName--",
+    "password": "--password--",
+    "passwordConfirm": "--passwordConfirm--",
+    "description": "--description--",
+    "bold": false,
+    "italic": true,
+    "underline": false,
+    "color": "green",
+    "size": 12,
+    "font": "cursive"
+}
+</script>
+
+<script id="view-form" type="application/x-jj-view">
+    <dl>
+        <dt>First Name</dt><dd>{{firstName}}</dd>
+        <dt>Last Name</dt><dd>{{lastName}}</dd>
+        <dt>Password</dt><dd>{{password}}</dd>
+        <dt>Password(Confirm)</dt><dd>{{passwordConfirm}}</dd>
+        <dt>Description</dt><dd>{{description}}</dd>
+        <dt>Bold</dt><dd>{{bold}}</dd>
+        <dt>Italic</dt><dd>{{italic}}</dd>
+        <dt>Underline</dt><dd>{{underline}}</dd>
+        <dt>Color</dt><dd>{{color}}</dd>
+        <dt>Size</dt><dd>{{size}}</dd>
+        <dt>Font</dt><dd>{{font}}</dd>
+    </dl>
+    <div style="font-family:{{font}};font-size:{{size}}pt;color:{{color}};">
+        <p>The quick brown fox jumps over the lazy dog.</p>
+        <p>A raposa rápida castanha ataca o cão preguiçoso.</p>
+        <p>A rápida raposa castanha salta em cima cão lento.</p>
+        <p>Franz jagt im total verwahrlosten Taxi quer durch Bayern. 1234567890</p>
+        <p>Agera vulpe maronie sare peste câinele cel leneş.</p>
+        <p>El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja</p>
+        <p>いろはにほへと / ちりぬるを / わかよたれそ / つねならむ / うゐのおくやま / けふこえて / あさきゆめみし / ゑひもせす</p>
+        <p>키스의 고유 조건은 입술끼리 만나야 하고 특별한 기술은 필요치 않다.</p>
+    </div>
+</script>
+
+<section id="nlsPage" class="jj-page jj-nofooter">
+    <header>
+        <button data-to="" data-fx="back"><span data-nls="common.back">back</span></button>
+        <h1><span>NLS Demo</span></h1>
+    </header>
+    <article class="jj-scroll">
+        <div class="jj-vbox">
+            <div>
+                <p>Easy to Localize Messages without JavaScript.</p>
+                <p>Please, note <em>data-nls</em> attributes and <em>jj-nls-*</em> CSS classes on the <em>HTML</em> element.</p>
+            </div>
+            <dl>
+                <dt>common.back</dt>
+                <dd><span data-nls="common.back">--back--</span></dd>
+                <dt>common.home</dt>
+                <dd><span data-nls="common.home">--home--</span></dd>
+                <dt>common.yes</dt>
+                <dd><span data-nls="common.yes">--yes--</span></dd>
+                <dt>common.no</dt>
+                <dd><span data-nls="common.no">--no--</span></dd>
+                <dt>common.ok</dt>
+                <dd><span data-nls="common.ok">--ok--</span></dd>
+                <dt>common.cancel</dt>
+                <dd><span data-nls="common.ok">--cancel--</span></dd>
+            </dl>
+            <dl>
+                <dt>hello</dt>
+                <dd><span data-nls="hello">--hello--</span></dd>
+                <dt>world</dt>
+                <dd><span data-nls="world">--world--</span></dd>
+                <dt>greeting</dt>
+                <dd><span data-nls="greeting">--greeting--</span></dd>
+            </dl>
+            <button id="enBtn" onclick="jj.nls.activeLang = 'en';">en</button>
+            <button id="koBtn" onclick="jj.nls.activeLang = 'ko';">ko</button>
+        </div>
+    </article>
+</section>
+
+</div><!--#jj-viewport-->
+
+<script>window._DEBUG = true;</script><!--@@DEBUG-->
+<script src="iscroll.js"></script><!--@@DEBUG-->
+<!--script src="iscroll-lite.min.js"></script--><!--@@RELEASE-->
+<script src="../js/core.js"></script><!--@@DEBUG-->
+<script src="../js/nls.js"></script><!--@@DEBUG-->
+<script src="../js/m.js"></script><!--@@DEBUG-->
+<script src="../js/v.js"></script><!--@@DEBUG-->
+<script src="../js/c.js"></script><!--@@DEBUG-->
+<script src="../js/ui.js"></script><!--@@DEBUG-->
+<!--script src="../lib/jj/jj.min.js"></script--><!--@@RELEASE-->
+<script>
+//jj.util = jj.require('jj.util');
+//jj.nls = jj.require('jj.nls');
+//jj.m = jj.require('jj.m');
+//jj.v = jj.require('jj.v');
+//jj.c = jj.require('jj.c');
+//jj.ui = jj.require('jj.ui');
+
+//jj.nls.init();
+//document.getElementById('greeting').innerHTML = jj.nls.format('greeting', { name: '동수' });
+
+//jj.m.init();
+//console.log('models=', jj.m.models);
+
+//jj.v.init();
+//console.log('views=', jj.v.views);
+
+//jj.c.init();
+
+//jj.ui.init();
+//console.log('pages=', jj.ui.pages);
+//console.log('ios=' + jj.ui.ios + ',android=' + jj.ui.android);
+//console.log('portrait=' + jj.ui.portrait + ',landscape=' + jj.ui.landscape);
+//console.log('viewportWidth=' + jj.ui.viewportWidth + ',viewportHeight=' + jj.ui.viewportHeight);
+
+//jj.ui.page('page1').show('none');
+
+//jj.ready(function () { document.getElementById('intro').className = 'fx'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "javascript-on-journery",
+  "version": "0.0.1",
+  "description": "javascript toolbox for webapp",
+  "author": "Dongsu Jang <iolothebard@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iolo/javascript-on-journey.git"
+  },
+  "license": "Proprietary",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-jsdoc": "~0.3.2"
+  }
+}

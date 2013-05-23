@@ -1,0 +1,122 @@
+/*--------------------------------------------------------*/
+/* 320x480.css */
+
+/* page */
+
+.jj-page {
+    width:320px;
+    height:480px;
+}
+
+.jj-page > header {
+    height:43px;
+    line-height:43px;
+}
+
+.jj-page > footer {
+    height:49px;
+    line-height:49px;
+}
+
+.jj-page > article {
+	height:370px;/*480-20-43-47*/
+	overflow:hidden;
+}
+
+.jj-page.noheader > article {
+    height:417px;/*@@dev(480-20-43)*/
+}
+
+.jj-page.nofooter > article {
+	height:413px;/*@@dev(480-20-47)*/
+}
+
+.jj-page.noheader.nofooter > article {
+	height:460px;/*@@dev(480-20)*/
+}
+
+.nostatusbar .jj-page > article {
+	height:390px;/*480-43-47*/
+}
+
+.nostatusbar .jj-page.noheader > article {
+    height:437px;/*@@dev(480-43)*/
+}
+
+.nostatusbar .jj-page.nofooter > article {
+	height:433px;/*@@dev(480-47)*/
+}
+
+.nostatusbar .jj-page.noheader.nofooter > article {
+	height:480px;
+}
+
+/* header/footer */
+
+.jj-page > header > h1,
+.jj-page > footer > h1 {
+	height:29px;/*@@dev*/
+	line-height:29px;
+	margin:7px 51px 7px 51px;/*@@dev*/
+	padding:0;
+	text-align:center;
+	vertical-align:middle;
+	font-size:17px;
+	font-weight:normal;
+    color:rgb(4,4,4);/*app*/
+	text-shadow:1px 1px 2px #fff;/*XXX*/
+}
+
+.jj-page > header > button,
+.jj-page > footer > button {
+	min-width:42px;
+	height:29px;/*@@dev*/
+	line-height:29px;
+	margin:9px 0 9px 0;/*@@dev*/
+	padding:0;
+	border:0 none;
+	text-align:center;
+	vertical-align:middle;
+	font-size:13px;
+}
+
+.jj-page > header > button {
+	border-radius:3px;
+	border:1px solid #b77425;/*XXX*/
+	color:rgb(255,255,255);/*@@app*/
+	background-color:rgb(255,179,51);/*@@app*/
+	text-shadow:0 -1px 1px rgb(181,123,47);/*XXX*/
+	-webkit-box-shadow:1px 1px 2px rgb(253,238,157);/*XXX*/
+}
+
+.jj-page > header > button.left {
+    margin-left:9px;
+}
+
+.jj-page > header > button.right {
+    margin-right:9px;
+}
+
+.jj-page > header > button > span {
+    display:block;
+    height:25px;
+    line-height:25px;
+	text-align:center;
+    vertical-align:middle;
+    border-radius:3px;
+    border-top:1px solid rgb(254,228,189);
+}
+
+/*XXX*/
+.jj-page > header > button.pressed {
+	border-color: rgb(104,66,0);
+	color: rgb(133,123,99);
+	background-color: rgb(136,97,0);
+	text-shadow: 0 1px 1px rgb(109,88,0);
+}
+
+/*XXX*/
+.jj-page > header > button.pressed > span {
+    border-top:1px solid rgb(135,119,68);
+}
+

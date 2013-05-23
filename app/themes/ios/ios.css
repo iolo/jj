@@ -1,0 +1,76 @@
+/* ios.css */
+
+/* more */
+
+.jj-more {
+    background-image: url(disclosure.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 13px;
+    color: transparent; /* hide :after content */
+}
+
+/* check */
+
+.jj-check {
+    width: 26px;
+    height: 26px;
+    color: transparent; /* hide :after content */
+}
+
+.jj-check > input[type="checkbox"] {
+    -webkit-appearance: textarea;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    background-image: url(checkmark.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+}
+
+.jj-check > input[type="checkbox"]:checked {
+    background-image: none;
+}
+
+/* listview */
+
+.jj-ui-ios .jj-listview {
+    background: url(bg_listview.png);
+}
+
+/* switch */
+
+.jj-ui-ios .jj-switch {
+    width: 78px;
+    height: 26px;
+    border-radius: 13px; /* 26/2 */
+    overflow: hidden;
+}
+
+.jj-ui-ios .jj-switch > input[type="checkbox"] {
+    -webkit-appearance: textarea;
+    margin: 0;
+    padding: 0;
+    width: 126px;
+    height: 26px;
+    background-image: url('switch.png');
+    background-position: -50px center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+    border: 0 none;
+    overflow: hidden;
+    -webkit-transition: background-position .15s;
+}
+
+.jj-ui-ios .jj-switch > input[type="checkbox"]:checked {
+    background-position: 0 center;
+}
+
+.jj-ui-ios .jj-loading {
+    background-image: url(loading.gif);
+    background-position: center 45%;
+    background-repeat: no-repeat;
+}

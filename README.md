@@ -3,7 +3,18 @@ Javascript-on-Journey
 
 javascript toolbox for webapp.
 
-![Journey Generations](http://raw.github.com/iolo/jj/master/app/img/journey-generations.jpg)
+![Journey Generations](//raw.github.com/iolo/jj/master/app/img/journey-generations.jpg)
+
+getting started
+---------------
+
+```
+$ npm install
+$ grunt sever
+$ open http://localhost:8000
+```
+
+and... may the *Source* be with you...
 
 core module
 -----------
@@ -41,3 +52,4 @@ and extras
 ----------
 
 * TBW...
+
